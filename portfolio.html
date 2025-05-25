@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hilmi</title>
+  <link rel="icon" type="image/png" href="logo hiro.png" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #ffffff);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #f5f5f5;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: #00796b;
+      letter-spacing: 1.2px;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #00796b;
+      padding: 0.5rem 0.75rem;
+      font-weight: 600;
+      border-radius: 4px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background-color: #004d40;
+      color: #fff;
+    }
+
+    main.container.portfolio {
+      width: 100%;
+      max-width: 1600px;
+      margin: 0 auto;
+      min-height: calc(100vh - 140px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 1rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #004d40;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .video-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      width: 100%;
+      max-width: 1200px;
+      margin-bottom: 4rem;
+    }
+
+    .video-container {
+      flex: 1 1 500px;
+      max-width: 100%;
+      aspect-ratio: 16 / 9;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+    }
+
+    .video-container:hover {
+      transform: scale(1.02);
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+      cursor: pointer; 
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    footer {
+      background-color: #004d40;
+      color: rgba(255, 255, 255, 0.85);
+      padding: 1.5rem 2rem;
+      text-align: center;
+      border-top: 2px solid #00796b;
+      font-size: 1rem;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
+    }
+
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .modal {
+      display: none; 
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #000;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Portfolio Hilmi</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container portfolio">
+    <h1 class="fade-in">My Project</h1>
+
+    <div class="video-row fade-in">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/9Py1glkFdmI?si=ip9HouQhMVTnF-Wd"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/NcHu-i8iWUk?si=cWzTrVKhLZl0eqrq"
+          title="Video Kedua"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+    <h1 class="fade-in">Galeri Foto</h1>
+
+    <div class="gallery">
+      <img class="fade-in" src="1.jpg" alt="Galeri 1" />
+      <img class="fade-in" src="2.jpg" alt="Galeri 2" />
+      <img class="fade-in" src="3.jpg" alt="Galeri 3" />
+      <img class="fade-in" src="4.jpg" alt="Galeri 4" />
+      <img class="fade-in" src="5.jpg" alt="Galeri 5" />
+      <img class="fade-in" src="6.jpg" alt="Galeri 6" />
+      <img class="fade-in" src="7.jpg" alt="Galeri 7" />
+      <img class="fade-in" src="8.jpg" alt="Galeri 8" />
+      <img class="fade-in" src="9.jpg" alt="Galeri 9" />
+      <img class="fade-in" src="10.jpg" alt="Galeri 10" />
+      <img class="fade-in" src="11.jpg" alt="Galeri 11" />
+      <img class="fade-in" src="12.jpg" alt="Galeri 12" />
+    </div>
+  </main>
+
+  <div id="modal" class="modal">
+    <img id="modal-img" src="" alt="Gambar Besar" />
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Ahmad Hilmi Adani.</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    const galleryImages = document.querySelectorAll('.gallery img');
+
+    galleryImages.forEach(img => {
+      img.addEventListener('click', () => {
+        modal.style.display = 'flex';
+        modalImg.src = img.src;
+        modalImg.alt = img.alt;
+      });
+    });
+
+    modal.addEventListener('click', () => {
+      modal.style.display = 'none';
+      modalImg.src = '';
+      modalImg.alt = '';
+    });
+  </script>
+</body>
+</html>
